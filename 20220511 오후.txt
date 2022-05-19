@@ -45,3 +45,4 @@ gir revert (커밋로그) -  해당하는 커밋로그를 유지하고 되돌아
 git push -uf - 강제로 깃허브로 push 할수있다
 
 git pull - 깃허브로부터 커밋로그를 받는다
+
