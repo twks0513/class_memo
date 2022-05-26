@@ -1,0 +1,8 @@
+[String의기능]
+
+.toUpperCase() - 모든 문자를 대문자로 변환해준다
+.toLowerCase() - 모든 문자를 소문자로 변환해준다
+.charAt(x) - 문자열중 x번째에 있는 값을 변환해온다
+.trim() - 문자열양옆의 공백을 없애준다
+.split("부분자") - 문자열을 부분자를 기준으로 자르게해준다
+.replace("old","new" ) - 문자열에 있는 old를 new로 바꿔준다
