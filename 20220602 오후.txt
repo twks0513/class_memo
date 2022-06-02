@@ -1,0 +1,14 @@
+This
+메소드의 0번째 매개변수 이다
+자동으로 생성되며 자기 자신의 값을 가지고있다
+
+private을 사용하는것을 정보은닉이라고 부른다
+
+setter
+private로 정보은닉이 된 정보에 setter으로 값을 설정할수있다
+메소드를 통해 값을 초기화할수있다
+
+getter
+private로 정보은닉이 된 정보를 getter으로 값을 얻어올수있다
+
+마우스 우클릭-> Source-> generate Getters nad Setters 로 편하게 만들수있다
