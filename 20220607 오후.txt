@@ -1,0 +1,95 @@
+[싱글톤 패턴]
+하나의 객체만을 사용하기 위한 것
+1. private로 생성자를 만들어서 객체를 만들수없게 한다
+2. public static (생성자명) getInstance(){
+}
+    의 형태이며 리턴값은 생성자를 따로 변수화해서 넣어준다
+ex) private static DBconnect db;
+	          (생성자)     (변수)
+이때 싱글톤은 null값을 갖고있다.
+
+[싱글톤 생성 예제]
+class DBconnect{
+	private static DBconnect db; // 생성자의 변수
+	private static int cnt=0; 
+	private DBconnect() {cnt++;} // 생성자
+	public int getCnt() {return cnt;}
+	public void controllDB() { 
+		System.out.println("DB사용");
+	}
+	public static DBconnect getInstance() { // 싱글톤
+		if(db==null) { // 객체가 안 만들어져 있다면
+			db = new DBconnect(); // 객체생성
+		}
+		return db;
+	}
+}
+public class Ex01 {
+
+	public static void main(String[] args) {
+		DBconnect db01 = DBconnect.getInstance(); // 싱글톤 생성
+		System.out.println(db01); // 싱글톤 값확인
+		//db01.controllDB();
+		System.out.println(db01.getCnt()+"명 연결 되었습니다");
+		
+	}
+}
+
+[상속]
+extends 라고도하며 이미 만들어져있는 코드를 사용하는것이다
+이미 만들어져있는 클래스를 부모 상속받는 클래스를 자식이라고 칭한다
+
+public (상속클래스) extends (부모클래스) 의 형태 이다
+부모클래스가 먼저 실행된 뒤 자식클래스가 실행된다
+
+만약 부모클래스와 자식클래스에 같은 이름의 메소드가있을경우
+부모클래스의 메소드는 super.(메소드)를사용하면 된다
+그 외의 경우엔 자식클래스의 메소드를 실행한다
+(확실하게 자식클래스의 메소드를 불러오려면 this.(메소드)를 사용한다)
+
+만일 부모클래스에 매개변수가 있다면
+자식클래스에 super((값)); 을 넣으면 된다(자식클래스에서 부모클래스의 생성자쪽으로 값을 전달 할수있다)
+자식클래스에 매개변수가있다면 super((매개변수));를 사용하면 된다
+
+[protected]
+private는 상속받은 자식이더라도 외부에서 접근자체를 막지만
+protected 는 상속받은 자식또는 같은패키지 내부에서는 접근가능하게해준다
+
+[현재시간]
+System.currentTimeMillis(); - long로 받아야하며 현재시간을 초단위로 표현한다
+ㄴ(SimpleDateFormat 객체로 포맷형식(출력형식)을 변경해주야한다)
+ㄴㄴString (변수) = (SimpleDateFormat변수).format(System.currentTimeMillis변수);
+
+Date(); - 요일 달 시간을 표현한다
+
+Thread.sleep(1000); - 예외처리를 필수적으로 해야하며 
+괄호안의 숫자(1000=1초)동안 기다렸다가 코드를 진행시켜준다
+
+[예외처리]
+예외처리 - 프로그램에서 예외적인 상황을 처리하는 것
+	개발자가 만든 의도가 아닌 사용자가 개발자의 의도가 아닌 다른 의도로 사용하는것도 예외처리라 말한다
+	예외처리를 하면 프로그램을 종료시키지 않는다
+
+강제처리 - throw
+
+예외전가 - throws
+(메소드) throws (오류명)
+코드는 깔끔해지지만 예외전가한 메소드를 호출할때 호출하는 메소드에서 예외처리를 해야한다
+예외처리 - try, catch 
+try{
+}catch(오류명){
+e.printStackTrace();
+}
+의 형태이다
+
+finally - 예외가 발생하던 발생하지 않던 무조건 실행하는 문장이다
+
+try {
+	System.out.println(10/2);
+} catch (Exception e) {
+	System.out.println("catch 실행");			
+}finally {
+	System.out.println("finally 실행");
+}
+System.out.println("다음 문장 실행");
+
