@@ -1,0 +1,14 @@
+[Wrapper class]
+일반적인 자료형을 클래스타입으로 바꾼것이다
+
+
+Wrapper class
+int	Integer
+char	Character
+double     Double
+....
+
+
+ArrayList<(자료형)> 이 가능하다
+이럴 경우 배열엔 해당 자료형만 들어가야 한다
+
