@@ -1,0 +1,28 @@
+[데이터베이스 연동]
+Connection con - 연결이 이루어진 객체
+PreparedStatement ps - 쿼리문 전송을 하기위한 전송 객체
+ResultSet rs - select의 결과값을 받기 위한 객체
+
+자바에서 오라클 명령어를 수행하기 위한 기능을 등록하는 과정
+Class.forName("oracle.jdbc.driver.OracleDriver");
+
+오라클에 연결하는 과정
+String url = "jdbc:oracle:thin:@localhost:1521:xe";
+(Connection객체) = DriverManager.getConnection(url,(DB아이디),(DB비밀번호));
+
+[sql문전송]
+String sql="insrt into newst vlaues(?,?,?)" - ?는 나중에 값을 넣겠다는 의미이다
+
+ps = con.prepareStatement(sql) - 연결된 객체를 이용해서 명령어 전송객체를 얻어온다
+
+ps.setString(1, info.getId())
+ps.setString(2, info.getName())  -- ? 자리에 각 값을 채워주는 역할
+ps.setInt(3, info.getAge())
+			
+result = ps.executeUpdate() - 명령어를 전송하겠다는 의미이다 
+executeUpdate는 보통 select를 제외한 나머지에 사용
+성공이면 1 실패시 0 또는 에러를 반환한다
+
+rs.next() - rs는 이터레이터처럼 작동한다
+따라서 안에 있는 내용들을 출력하려면 while(rs.next())를 사용하여 출력해야한다
+
