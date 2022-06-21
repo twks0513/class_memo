@@ -1,0 +1,19 @@
+<style type="text/css">
+		.span1{ background-color: yellow; position: absolute; top:15px;} /* relative - 현재 기준이 되는 static태그에서 위치를 지정한다 */
+		.span2{ background-color: aqua; position: absolute; left:10px;} /* absolute - body를 기준으로 위치를 지정한다 */
+		.span3{ background-color: gray; position: absolute; top:-15px;}
+		div{ background-color: green;}
+	</style>
+<style type="text/css">
+	.sp{ background-color: gray; width: 400px; height: 50px;}
+	.rp1{position: fixed; right: 30px; top: 10px; background-color: olive; width: 400px; height: 50px;}
+	.rp2{position: absolute; right: 60px; top: 20px; background-color: olive; width: 400px; height: 50px;}
+	/* fixed - 항상 고정되어있게 한다 */
+</style>
+
+<style type="text/css">
+	img { position: absolute; left: 0; top: 0; opacity:0.5; z-index: 0;}
+	h1 { position: absolute; z-index: 1;} /* z-index - 같은위치일때 태그에 순서를 두게한다 */
+	p {position: fixed; color: blue; top:0; z-index: -1;}
+</style>
+
