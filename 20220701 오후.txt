@@ -1,0 +1,9 @@
+이클립스 DB사용 절차
+1. 드라이브 로드 (오라클 기능을 사용할수 있게 해준다) (Class.forName("oracle.jdbc.OracleDriver");)
+2. 오라클과 자바와 연결(Connection) (Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","twks0512","hw6297");)
+3. 명령어 전송하는 객체 얻어오기 (PreparedStatement) (rs = ps.executeQuery();)
+	- executeQuery() : select를 쓸때 사용(결과값을 ResultSet으로 가져온다)
+	- executeUpdate() : select를 제외한 나머지일때 사용(결과값을 int로 가져온다) 
+4. 결과값 받는 객체 생성(ResultSet)
+	- select를 통해서 많은 정보를 가져올 때 ResultSet사용
+	- select를 제외한 나머지는 int로 받는다
