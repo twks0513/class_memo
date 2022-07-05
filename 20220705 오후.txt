@@ -1,0 +1,5 @@
+[JSP태그]
+<jsp:useBean id="(변수명)" class="(객체위치)"/> 은
+TestDAO dao = new TestDAO(); 과 같은 의미이다 (객체를 생성한다는 뜻)
+
+<jsp:setProperty property="(dto변수)" name="(변수명)"/> 생성한 dto객체에 값을 넣어준다
