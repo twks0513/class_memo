@@ -37,3 +37,5 @@ ${변수}
 	<c:otherwise></c:otherwise> - else문과 같다
 </c:choose>
  
+
+rownum - sql문에서 데이터의 수를 카운트할때 사용된다
